@@ -2,9 +2,10 @@
 <html lang="en">
 
 <head>
-    <title>Title</title>
+    <title>App web</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
+    <link rel="shortcut icon" href="../libreria/lucide-lab--basketball.png" />
     <meta
         name="viewport"
         content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -27,7 +28,3 @@
         </div>
     </nav>
     <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <br>
-                <div class="row">

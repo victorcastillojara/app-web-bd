@@ -1,5 +1,4 @@
- </div>
- </div>
+
  </div>
  </div>
  <!-- Bootstrap JavaScript Libraries -->
