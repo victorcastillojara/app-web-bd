@@ -76,11 +76,13 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="">
-                                <td scope="row">R1C1</td>
-                                <td>R1C2</td>
-                                <td>R1C3</td>
+                        <?php foreach($listaCursos as $lista){?>
+                            <tr>
+                                <td><?php echo $lista['id']; ?></td>
+                                <td><?php echo $lista['nombre_curso']; ?></td>
+                                <td>seleccionar</td>
                             </tr>
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>

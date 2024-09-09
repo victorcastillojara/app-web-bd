@@ -11,7 +11,7 @@ $consulta=$conexionBD->prepare("SELECT * FROM cursos");
 $consulta->execute();
 
 $listaCursos=$consulta->fetchAll();
-print_r($listaCursos);
+
 
 
 ?>
