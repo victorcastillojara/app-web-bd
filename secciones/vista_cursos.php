@@ -1,4 +1,5 @@
 <?php include('../templates/cabecera.php'); ?>
+<?php include('../secciones/cursos.php'); ?>
 <div class="row">
     <div class="col-12">
         <br>
@@ -31,18 +32,24 @@
                             </div>
                             <div class="btn-group" role="group" aria-label="Button group name">
                                 <button
-                                    type="button"
-                                    class="btn btn-success">
+                                    type="submit"
+                                    class="btn btn-success"
+                                    value="agregar"
+                                    name="accion">
                                     Agregar
                                 </button>
                                 <button
-                                    type="button"
-                                    class="btn btn-warning">
+                                    type="submit"
+                                    class="btn btn-warning"
+                                    value="editar"
+                                    name="accion">
                                     Editar
                                 </button>
                                 <button
-                                    type="button"
-                                    class="btn btn-danger">
+                                    type="submit"
+                                    class="btn btn-danger"
+                                    value="borrar"
+                                    name="accion">
                                     Borrar
                                 </button>
                             </div>
@@ -55,7 +62,7 @@
 
 
             </div>
-            
+
             <div class="col-md-7">
                 <div
                     class="table-responsive">
@@ -73,11 +80,6 @@
                                 <td scope="row">R1C1</td>
                                 <td>R1C2</td>
                                 <td>R1C3</td>
-                            </tr>
-                            <tr class="">
-                                <td scope="row">Item</td>
-                                <td>Item</td>
-                                <td>Item</td>
                             </tr>
                         </tbody>
                     </table>
