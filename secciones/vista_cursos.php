@@ -17,6 +17,7 @@
                                     class="form-control"
                                     name="id"
                                     id="id"
+                                    value="<?php echo $id; ?>"
                                     aria-describedby="helpId"
                                     placeholder="ID" />
                             </div>
@@ -27,6 +28,7 @@
                                     class="form-control"
                                     name="nombre_curso"
                                     id="nombre_curso"
+                                    value="<?php echo $nombre_curso; ?>"
                                     aria-describedby="helpId"
                                     placeholder="Nombre" />
                             </div>
@@ -76,12 +78,17 @@
                             </tr>
                         </thead>
                         <tbody>
-                        <?php foreach($listaCursos as $lista){?>
-                            <tr>
-                                <td><?php echo $lista['id']; ?></td>
-                                <td><?php echo $lista['nombre_curso']; ?></td>
-                                <td>seleccionar</td>
-                            </tr>
+                            <?php foreach ($listaCursos as $lista) { ?>
+                                <tr>
+                                    <td><?php echo $lista['id']; ?></td>
+                                    <td><?php echo $lista['nombre_curso']; ?></td>
+                                    <td>
+                                        <form action="" method="post">
+                                            <input type="hidden" name="id" id="id" value="<?php echo $lista['id']; ?>">
+                                            <input type="submit" value="seleccionar" name="accion" class="btn btn-info">
+                                        </form>
+                                    </td>
+                                </tr>
                             <?php } ?>
                         </tbody>
                     </table>
