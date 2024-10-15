@@ -1,3 +1,16 @@
+<?php
+session_start();
+
+if ($_POST) {
+
+    $mensaje="usuario o contraseña incorrecta";
+    if ($_POST['usuario'] == 'admin' && $_POST['password'] == 'admin') {
+        $_SESSION['usuario'] = $_POST['usuario'];
+        header('Location: secciones/index.php');
+    }
+}
+
+?>
 <!doctype html>
 <html lang="en">
 
@@ -26,43 +39,48 @@
             </div>
             <div class="col-md-4">
                 <br>
-                <form action="secciones/index.php" method="post">
-                <div class="card">
-                    <div class="card-header">Inicio de sesión</div>
+                <form action="" method="post">
+                    <div class="card">
+                        <div class="card-header">Inicio de sesión</div>
 
-                    <div class="card-body">
+                        <div class="card-body">
+                            <?php if (isset($mensaje)) {
+                                echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">'
+                                    . $mensaje . '
+                                </div>';
+                            }
+                            ?>
+                            <div class="mb-3">
+                                <label for="" class="form-label">Usuario</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    name="usuario"
+                                    id="usuario"
+                                    aria-describedby="helpId"
+                                    placeholder="Usuario" />
+                                <small id="helpId" class="form-text text-muted">Escriba su usuario</small>
+                            </div>
+                            <div class="mb-3">
+                                <label for="contraseña" class="form-label">Contraseña</label>
+                                <input
+                                    type="password"
+                                    class="form-control"
+                                    name="password"
+                                    id="password"
+                                    aria-describedby="helpId"
+                                    placeholder="Contraseña" />
+                                <small id="helpId" class="form-text text-muted">Escriba su contraseña</small>
+                            </div>
+                            <button
+                                type="submit"
+                                class="btn btn-primary">
+                                Iniciar sesión
+                            </button>
 
-                        <div class="mb-3">
-                            <label for="" class="form-label">Usuario</label>
-                            <input
-                                type="text"
-                                class="form-control"
-                                name="usuario"
-                                id="usuario"
-                                aria-describedby="helpId"
-                                placeholder="Usuario" />
-                            <small id="helpId" class="form-text text-muted">Escriba su usuario</small>
                         </div>
-                        <div class="mb-3">
-                            <label for="contraseña" class="form-label">Contraseña</label>
-                            <input
-                                type="password"
-                                class="form-control"
-                                name="contraseña"
-                                id="contraseña"
-                                aria-describedby="helpId"
-                                placeholder="Contraseña" />
-                            <small id="helpId" class="form-text text-muted">Escriba su contraseña</small>
-                        </div>
-                        <button
-                            type="submit"
-                            class="btn btn-primary">
-                            Iniciar sesión
-                        </button>
 
                     </div>
-
-                </div>
                 </form>
             </div>
 
